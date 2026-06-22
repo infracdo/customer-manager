@@ -28,10 +28,10 @@ jobs:
         run: 
           # docker build --target build -t my-image:build .
 
-          docker build -t hive-ais-customer-manager:test .
+          docker build -t hive-ais-crm-worker:test .
 
       # Step 4: Push the Docker image
       - name: Push Docker Image
         run: |
-          docker tag hive-ais-customer-manager:test infracdo/hive-ais-customer-manager:test
-          docker push infracdo/hive-ais-customer-manager:test
+          docker tag hive-ais-crm-worker:test infracdo/hive-ais-crm-worker:test
+          docker push infracdo/hive-ais-crm-worker:test
