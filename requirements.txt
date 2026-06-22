@@ -1,0 +1,13 @@
+# HTTP Client (for apollo-device-provisioner API)
+httpx==0.25.1
+
+# Redis for background tasks
+redis==5.0.1
+rq==1.15.1
+
+# Configuration
+pydantic==2.4.2
+pydantic-settings==2.0.3
+
+# Logging
+python-json-logger==2.0.7

@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  rq-worker:
+    image: marcandres888/acm-rq-worker:latest    
+    container_name: acm-rq-worker
+    restart: unless-stopped
+    environment:
+      - REDIS_URL=${REDIS_URL:-redis://zeep-redis:6379/0}
+      - APOLLO_PROVISIONER_URL=${APOLLO_PROVISIONER_URL:-http://apollo-device-provisioner:8000/api/v1}
+      - GOTIFY_URL=${GOTIFY_URL:-http://gotify}
+      - GOTIFY_CLIENT_KEY=${GOTIFY_CLIENT_KEY:-Cv0IaYfnF-F7aFg}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+    networks:
+      - portainer_default
+
+networks:
+  portainer_default:
+    external: true
